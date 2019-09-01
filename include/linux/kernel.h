@@ -55,46 +55,6 @@ enum {
 extern int g_asus_lcdID;
 //ASUS_BSP: ---
 
-// +++ ASUS_BSP : add for miniporting
-enum DEVICE_HWID
-{
-	//ZE500KL
-	ZE552KL_EVB = 0x0,
-	ZE552KL_SR1 = 0x1,
-	ZE552KL_SR2 = 0x2,
-	ZE552KL_ER1 = 0x3,
-	ZE552KL_ER2 = 0x4,
-	ZE552KL_PR  = 0x5,
-	ZE552KL_PR2 = 0x6,
-	ZE552KL_MP  = 0x7,
-
-	ZE520KL_EVB = 0x10,
-	ZE520KL_SR1 = 0x11,
-	ZE520KL_SR2 = 0x12,
-	ZE520KL_ER1 = 0x13,
-	ZE520KL_ER2 = 0x14,
-	ZE520KL_PR  = 0x15,
-	ZE520KL_PR2 = 0x16,
-	ZE520KL_MP  = 0x17,
-
-
-	ZE552KL_UNKNOWN = 0xFF
-};
-extern enum DEVICE_HWID g_ASUS_hwID;
-// --- ASUS_BSP : add for miniporting
-
-//ASUS_BSP: +++
-enum {
-	ZE520KL_LCD_BOE = 0,
-	ZE552KL_LCD_CTC,
-	ZE520KL_LCD_TM,
-	ZE552KL_LCD_TM,
-	ZE552KL_LCD_TXD,
-	ZE552KL_LCD_LCE
-};
-extern int g_asus_lcdID;
-//ASUS_BSP: ---
-
 #define USHRT_MAX	((u16)(~0U))
 #define SHRT_MAX	((s16)(USHRT_MAX>>1))
 #define SHRT_MIN	((s16)(-SHRT_MAX - 1))
