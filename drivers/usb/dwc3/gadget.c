@@ -2985,6 +2985,12 @@ static void dwc3_gadget_reset_interrupt(struct dwc3 *dwc)
 	dwc->b_suspend = false;
 	dwc3_notify_event(dwc, DWC3_CONTROLLER_NOTIFY_OTG_EVENT, 0);
 
+	#if defined(CONFIG_UNKNOWN_CHARGER)
+	// ASUS_BSP "Add Unknown Charger Support"
+	// We need another event specific for HOST reset interrupt
+	dwc3_notify_event(dwc, DWC3_CONTROLLER_NOTIFY_RESET, 0);
+	#endif
+
 	dbg_event(0xFF, "BUS RST", 0);
 	/* after reset -> Default State */
 	usb_gadget_set_state(&dwc->gadget, USB_STATE_DEFAULT);
